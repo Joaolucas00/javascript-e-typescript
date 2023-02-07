@@ -10,18 +10,39 @@
 <body>
     <h1>Usando DOM</h1>
     <p>Aqui vai o resultado</p>
-    <div id="clique">Clica em mim!</div>
+    <div id="clique" onclick="clicar()">Clica em mim!</div>
+
+    <div id="passmause" >Passe o mause aqui!</div>
     <script>
+        var divMauseEntrar = window.document.getElementById('passmause')
+        var divSair = window.document.getElementById('passmause')
+        divSair.addEventListener('mouseleave', mauseSair)
+        divMauseEntrar.addEventListener('mouseenter', mauseEntrar)
+
         var p1 = window.document.getElementsByTagName('p')[0]
+
         p1.style.color = 'blue'
+
         var corpo = window.document.body
 
         var clique = window.document.querySelector('div#clique')
+          
+        function clicar() {
+            p1.innerHTML = 'Olá, Mundo!'
+        }
 
+        function mauseEntrar() {
+            divMauseEntrar.style.backgroundColor = 'rgb(31, 49, 31)'
+            divMauseEntrar.style.color = 'white'
+            divMauseEntrar.innerHTML = 'Olá, Mundo!'
+        }
 
+        function mauseSair() {
+            divSair.style.backgroundColor = ' rgb(142, 197, 142)'
+            divSair.style.color = 'black'
+            divSair.innerHTML = 'Passe o mause aqui!'
+        }
 
-
-    
         //innerText pega a tag sem suas tags filhas já o innerHTML pega tudo que está dentro da tag
     </script>
 </body>
