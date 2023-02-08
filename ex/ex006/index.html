@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS condições</title>
+</head>
+<body>
+    <h1>Condições JS</h1>
+    <hr>
+    <form action="" method="get">
+        <label for="ipar">O número é par ou ímpar?</label>
+        <input type="number" name="num" id="ipar">
+    </form>
+    <input type="button" value="Verificar" onclick="verificarPar()">
+    <p>
+        Resultado: <span id="resultado"></span>
+    </p>
+
+    <script>
+
+        function verificarPar() {
+            var innum = window.document.getElementById('ipar')
+            var numin = Number(innum.value)
+            var result = window.document.getElementById('resultado')
+
+            if (numin % 2 == 0) {
+                result.innerHTML = `O número ${numin} é par.`
+            } else {
+                result.innerHTML = `O número ${numin} é ímpar.`
+            }
+        }
+
+
+
+    </script>
+
+</body>
+</html>
