@@ -12,13 +12,13 @@
         <h1>Vamos contar</h1>
         <article>
             <label for="iinicio">Início:</label>
-            <input type="number" name="num" id="iinicio"> <br>
+            <input type="number" name="num" id="iinicio" value="0"> <br>
             <label for="ifim">Fim:</label>
-            <input type="number" name="num" id="ifim">  <br>
+            <input type="number" name="num" id="ifim" value="0">  <br>
             <label for="ipasso">Passo:</label> 
-            <input type="number" name="num" id="ipasso">
+            <input type="number" name="num" id="ipasso" value="0">
 
-            <input type="button" value="Contar">
+            <input type="button" value="Contar" onclick="contar()">
             <p>Contando: <span id="contagem"></span></p>
         </article>
     </main>
