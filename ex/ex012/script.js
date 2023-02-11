@@ -1,4 +1,5 @@
 let numeros = [2, 7, 8, 3, 4]
+
 console.log(numeros.length)
 numeros.push('oLÁ')
 console.log(numeros)
@@ -7,6 +8,10 @@ console.log(numeros.length)
 numeros[5] = null
 numeros.sort()
 console.log(numeros)
+
+for (let posicao in numeros) {
+    console.log(numeros[posicao])
+}
 
 /*
 let pessoa = [['Juan', 19], ['João', 18], ['Pedro', 20]]
