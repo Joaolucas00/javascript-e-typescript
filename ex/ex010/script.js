@@ -9,6 +9,15 @@ function contar() {
     var passo = Number(txt_passo.value)
 
     var span_contagem = document.getElementById('contagem')
+
+    if (passo == 0) {
+        passo = 1
+    }
+
+    if (passo < 0) {
+        passo *= -1
+    }
+
     if (inicio < fim) {
         for (cc = inicio; cc <= fim; cc += passo) {
             span_contagem.innerHTML += cc + '->'
@@ -18,5 +27,4 @@ function contar() {
             span_contagem.innerHTML += cc + '->'
         }
     }
-
 }
