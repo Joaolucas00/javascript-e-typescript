@@ -20,11 +20,13 @@ function contar() {
 
     if (inicio < fim) {
         for (cc = inicio; cc <= fim; cc += passo) {
-            span_contagem.innerHTML += cc + '->'
+            span_contagem.innerHTML += cc + '\u{1F449}'
         }
+        span_contagem.innerHTML += '\u{1F3C1}'
     } else if (inicio > fim) {
         for (cc = inicio; cc >= fim; cc -= passo) {
-            span_contagem.innerHTML += cc + '->'
+            span_contagem.innerHTML += cc + '\u{1F449}'
         }
+        span_contagem.innerHTML += '\u{1F3C1}'
     }
 }
