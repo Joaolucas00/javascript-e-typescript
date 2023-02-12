@@ -15,7 +15,7 @@ function funcao_recursiva_fatorial(n) {
 // Function Expression
 const calcPorcen = function(n=0, p=100){return n*(p/100)}
 
-// Arrow Function, a ideai é ser mais simples do que uma função comum.
+// Arrow Function, a ideia é ser mais simples do que uma função comum.
 const calcularPorcentagem = (num=0, por_num=100) => {return num * (por_num/100)}
 
 
