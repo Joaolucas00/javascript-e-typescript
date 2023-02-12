@@ -12,6 +12,7 @@ console.log(numeros)
 for (let posicao in numeros) {
     console.log(numeros[posicao])
 }
+console.log(numeros.indexOf(7))
 
 /*
 let pessoa = [['Juan', 19], ['João', 18], ['Pedro', 20]]
