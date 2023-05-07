@@ -9,7 +9,7 @@ function sayHello() {
      * 
      * var -> function
      * let -> block
-     * 
+     * const -> block
      * let está definida dentro do bloco onde a variável let é definida
      * 
      */
