@@ -13,6 +13,6 @@ andar();
 // se o strict mode está ativo, retorna undefined
 
 /**
- * Dentro do JavaScript, funções são objetos, então andar() é um objeto. Então há propriedades e métodos que podemos usar, bind é um deles.
+ * Dentro do JavaScript, funções são objetos, então andar() é um objeto. Então, há propriedades e métodos que podemos usar, bind() é um deles.
  * bind() - o que passar de argumento para ele, irá determinar o valor de this
  */
