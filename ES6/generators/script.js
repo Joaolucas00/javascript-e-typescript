@@ -38,3 +38,27 @@ function ativaGenerator() {
     */
     document.getElementById('id').innerHTML = obj.next().value
 }
+
+function* gerarId() {
+    let id = 1
+
+    while (true) {
+        const increment = yield id
+        if (increment != null) {
+            id += increment
+        } else {
+            id++
+        }
+    }
+}
+
+const objId = gerarId()
+
+console.log(objId.next());
+console.log(objId.next());
+console.log(objId.next());
+console.log(objId.next());
+console.log(objId.next(4)); // o que tu passar para next() p yield recebe
+console.log(objId.next());
+console.log(objId.return(11));
+console.log(objId.next());
