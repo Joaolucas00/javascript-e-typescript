@@ -41,7 +41,7 @@ main {
 input[type=submit] {
     cursor: pointer;
     font-size: 1.05em;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     width: 86px;
     height: 33px;
     color: white;
