@@ -80,3 +80,9 @@ button {
     border-radius: 5px;
     margin: 36px 10px 10px 72px;
 }
+
+div {
+    width: 100px;
+    height: 100px;
+    background-color: lightgray;
+}
