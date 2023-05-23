@@ -1,7 +1,8 @@
 // var button = document.querySelector('#button').addEventListener('click', () => {console.log('click');});
 
 var button = document.querySelector('#button').addEventListener('click', buttonClick);
-var div = document.querySelector('div').addEventListener('mousemove', positionMouse);
+var div = document.querySelector('div');
+div.addEventListener('mousemove', positionMouse);
 
 function buttonClick(e) {
     var input = document.querySelector('input[type=text]');
@@ -32,4 +33,6 @@ function positionMouse(e) {
 
     spanX.innerHTML = e.offsetX;
     spanY.innerHTML = e.offsetY;
+
+    div.style.backgroundColor = `rgb(${e.offsetX}, ${e.offsetY}, ${e.clientX})`;
 }
