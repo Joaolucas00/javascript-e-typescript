@@ -50,7 +50,7 @@ input[type=submit] {
     border-radius: 5px;
 }
 
-input[type=text] {
+input[type="text"] {
     font-size: 1.2em;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     width: 80%;

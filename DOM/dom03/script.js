@@ -3,9 +3,10 @@
 var button = document.querySelector('#button').addEventListener('click', buttonClick);
 var div = document.querySelector('div');
 div.addEventListener('mousemove', positionMouse);
+let inputText = document.querySelector('input[type="text"]');
 
 function buttonClick(e) {
-    var input = document.querySelector('input[type=text]');
+    let input = document.querySelector('input[type="text"]');
     let li = document.createElement('li');
     let ul = document.querySelector('ul');
     li.textContent = input.value;
@@ -34,5 +35,5 @@ function positionMouse(e) {
     spanX.innerHTML = e.offsetX;
     spanY.innerHTML = e.offsetY;
 
-    div.style.backgroundColor = `rgb(${e.offsetX}, ${e.offsetY}, ${e.clientX})`;
+    div.style.backgroundColor = `rgb(${e.offsetX}, ${e.offsetY}, 255)`;
 }
