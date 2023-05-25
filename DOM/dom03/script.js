@@ -1,9 +1,34 @@
 // var button = document.querySelector('#button').addEventListener('click', () => {console.log('click');});
 
 var button = document.querySelector('#button').addEventListener('click', buttonClick);
+var form = document.querySelector('form');
 var div = document.querySelector('div');
 div.addEventListener('mousemove', positionMouse);
 let inputText = document.querySelector('input[type="text"]');
+var select = document.querySelector('select');
+inputText.addEventListener('keydown', keyEvent);
+inputText.addEventListener('keyup', keyEvent);
+inputText.addEventListener('keypress', keyEvent);
+inputText.addEventListener('focus', keyEvent); // dispara quando tu clica no input
+inputText.addEventListener('blur', keyEvent);
+inputText.addEventListener('cut', keyEvent);
+inputText.addEventListener('paste', keyEvent);
+inputText.addEventListener('input', keyEvent);
+
+select.addEventListener('change', selectEvent);
+
+form.addEventListener('submit', formEvent);
+
+function formEvent(e) {
+    e.preventDefault();
+    console.log(e.type);
+}
+
+function selectEvent(e) {
+    //let input = document.querySelector('input[type="text"]');
+    //input.value = e.target.value;
+    document.querySelector('input[type="text"]').value = e.target.value;
+}
 
 function buttonClick(e) {
     let input = document.querySelector('input[type="text"]');
@@ -36,4 +61,9 @@ function positionMouse(e) {
     spanY.innerHTML = e.offsetY;
 
     div.style.backgroundColor = `rgb(${e.offsetX}, ${e.offsetY}, 255)`;
+}
+
+function keyEvent(e) {
+    console.log(`${e.type}:` + e.target.value);
+    div.innerHTML = `<h3>${e.target.value}</h3>`;
 }

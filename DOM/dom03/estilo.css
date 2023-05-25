@@ -43,7 +43,7 @@ input[type=submit] {
     font-size: 1.05em;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     width: 86px;
-    height: 33px;
+    height: 35px;
     color: white;
     background-color: rgb(34, 34, 34);
     border: 1px solid rgb(0, 0, 0);
@@ -53,8 +53,8 @@ input[type=submit] {
 input[type="text"] {
     font-size: 1.2em;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    width: 80%;
-    height: 33px;
+    width: 70%;
+    height: 35px;
     border: 1px solid black;
     border-radius: 8px;
 }
@@ -85,4 +85,15 @@ div {
     width: 100px;
     height: 100px;
     background-color: lightgray;
+}
+
+select {
+    width: 10%;
+    height: 35px;
+    border: 1px solid black;
+    border-radius: 10px 10px 10px 10px;
+}
+
+form {
+    padding: 10px;
 }
