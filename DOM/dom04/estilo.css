@@ -38,7 +38,7 @@ main {
     padding: 20px;
 }
 
-input[type=submit] {
+input[type=submit], input[type="button"] {
     cursor: pointer;
     font-size: 1.05em;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
