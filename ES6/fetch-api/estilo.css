@@ -32,7 +32,6 @@ button.button {
     font-weight: 400;
     border-radius: 10%;
     cursor: pointer;
-    border: 1px solid black;
 }
 
 button#getText {
@@ -53,7 +52,6 @@ main {
     position: absolute;
     width: 50%;
     height: 50%;
-    background-color: lightgray;
 
     top: 50%;
     left: 50%;
@@ -68,6 +66,33 @@ section#botoens {
 
     gap: 10%;
     
+    padding: 10px;
+    margin: 10px;
+
     height: 20%;
-    background-color: rgba(0, 0, 0, 0.336);
+}
+
+input[type="text"] {
+    display: block;
+    margin: 10px 10px 10px 60px;
+    padding: 3px;
+    height: 30px;
+    width: 70%;
+    border: 1px solid black;
+    border-radius: 5px;
+    font-size: 1.1em;
+}
+
+textarea {
+    display: block;
+    margin: 10px 10px 10px 60px;
+    padding: 5px;
+    font-size: 1em;
+}
+
+hr {
+    width: 100%;
+    margin: 30px auto 30px auto;
+    background-color: rgba(0, 0, 0, 0.178);
+    border: 1px solid rgba(0, 0, 0, 0.329);
 }
