@@ -1,30 +1,49 @@
 document.querySelector('button#getText').addEventListener('click', getText);
 document.querySelector('button#getJson').addEventListener('click', getJson);
 function getText() {
+    let divOutput = document.querySelector('div#output');
+
     fetch('sample-txt.txt')
     .then((res) => {
         return res.text();
     })
     .then((data) => {
-        document.querySelector('div#output').innerHTML = data;
+        divOutput.innerHTML = data;
         console.log(data);
     }).catch((err) => {
-        document.querySelector('div#output').innerHTML = "<p>Oops! Algum erro foi desparado!</p>";
+        divOutput.innerHTML = "<p>Oops! Algum erro foi desparado!</p>";
         console.log('Oops! Erro: ' + err);
     });
 }
 
 function getJson() {
+    let divOutput = document.querySelector('div#output');
     fetch('users.json')
     .then((response) => {
         return response.json();
     })
     .then((data) => {
+        for (let i = 0; i < data.users.length; i++) {
+            let li = document.createElement('li');
+            console.log(data.users[i].name);
+            li.textContent = `ID: ${data.users[i].id} | NOME: ${data.users[i].name} | EMAIL: ${data.users[i].email}`;
+            divOutput.appendChild(li);
+            console.log(divOutput);
+        }
         console.log(data);
     })
     .catch((err) => {console.log(err);})
     
 }
+
+
+
+
+
+
+
+
+
 
     /** Mozila - https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Connection_management_in_HTTP_1.x
      * 
