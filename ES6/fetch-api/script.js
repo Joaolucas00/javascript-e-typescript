@@ -1,5 +1,8 @@
 document.querySelector('button#getText').addEventListener('click', getText);
 document.querySelector('button#getJson').addEventListener('click', getJson);
+document.querySelector('button#getApiData').addEventListener('click', getApi);
+document.querySelector('form#addPost').addEventListener('submit', addPost);
+
 function getText() {
     let divOutput = document.querySelector('div#output');
 
@@ -36,9 +39,53 @@ function getJson() {
     
 }
 
+function getApi() {
+    let divOutput = document.querySelector('div#output');
+    fetch('https://jsonplaceholder.typicode.com/posts')
+    .then((response) => {
+        return response.json();
+    })
+    .then((data) => {
+        data.forEach((element) => {
+            divOutput.innerHTML += `
+            <ul>
+                <li>${element.userId}</li>
+                <li>${element.id}</li>
+                <li>${element.title}</li>
+                <li>${element.body}</li>
+            </ul>`;
+        });
+    })
+    .catch((err) => {console.log(err);});
+}
 
+function addPost(e) {
+    let divOutput = document.querySelector('div#output');
+    e.preventDefault();
+    let title = document.querySelector('input[type="text"]').value;
+    let text = document.querySelector('textarea').value;
 
-
+    fetch('https://jsonplaceholder.typicode.com/posts', {
+        method: 'POST',
+        headers: {
+            'Accept': 'application/json, text/plain, */*',
+            'Content-type': 'application/json' 
+        },
+        body:JSON.stringify({
+            title: title,
+            body: text
+        })
+    })
+    .then((res) => res.json())
+    .then((data) => {
+        divOutput.innerHTML = `<ul>
+        <li>${data.title}</li>
+        <li>${data.body}</li>
+        </ul>`;
+        console.log(data);
+    })
+    .catch((err) => {console.log(err);});
+}
 
 
 
