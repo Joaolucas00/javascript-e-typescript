@@ -15,5 +15,8 @@
     "npm"
   ],
   "author": "João Lucas\u001b[A\u001b[B\u001b[C\u001b[D",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "lodash": "^4.17.21"
+  }
 }
