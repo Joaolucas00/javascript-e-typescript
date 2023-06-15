@@ -1,6 +1,6 @@
 document.querySelector('button#getText').addEventListener('click', getText);
 document.querySelector('button#getJson').addEventListener('click', getJson);
-document.querySelector('button#getApiData').addEventListener('click', getApi);
+document.querySelector('button#getApiData').addEventListener('click', getApiAsync);
 document.querySelector('form#addPost').addEventListener('submit', addPost);
 
 function getText() {
@@ -39,7 +39,7 @@ function getJson() {
     
 }
 
-function getApi() {
+async function getApi() {
     let divOutput = document.querySelector('div#output');
     fetch('https://jsonplaceholder.typicode.com/posts')
     .then((response) => {
@@ -57,6 +57,14 @@ function getApi() {
         });
     })
     .catch((err) => {console.log(err);});
+}
+
+// async ---------------------------------------
+
+async function getApiAsync() {
+    const response = await fetch('https://jsonplaceholder.typicode.com/posts');
+    console.log(response);
+    return response.json();
 }
 
 function addPost(e) {
