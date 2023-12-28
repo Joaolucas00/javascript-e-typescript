@@ -4,7 +4,7 @@ const pessoa = {
     conversar() {} // sintax mais simples do que a anterior
 }
 
-pessoa.talk;
+pessoa.conversar;
 pessoa.nome;
 
 /**
