@@ -1,6 +1,6 @@
 document.querySelector('button#getText').addEventListener('click', getText);
 document.querySelector('button#getJson').addEventListener('click', getJson);
-document.querySelector('button#getApiData').addEventListener('click', getApiAsync);
+document.querySelector('button#getApiData').addEventListener('click', getApi);
 document.querySelector('form#addPost').addEventListener('submit', addPost);
 
 function getText() {
