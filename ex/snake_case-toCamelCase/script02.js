@@ -15,4 +15,4 @@ function camelCaseTo_snake_case (str) {
     return 0
 }
 
-console.log(camelCaseTo_snake_case("camelCaseConverting"));
+console.log(camelCaseTo_snake_case("camelCaseConverting"))
