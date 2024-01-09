@@ -6,6 +6,15 @@ function convertingArrayToString(str) {
     return array
 }
 
+function isBadString(str) {
+    if (/[A-Z]/.test(str) && str.includes("_") && str.includes("-")) {
+        return true
+    } else if ( (/[A-Z]/.test(str) && str.includes("_")) || (/[A-Z]/.test(str) && str.includes("-")) || (str.includes("-") && str.includes("_"))) {
+        return true
+    }
+    return false
+}
+
 function to_snake_case (str) {
     if (/[A-Z]/.test(str) || str.includes("-")) {
         let array = convertingArrayToString(str)
@@ -19,7 +28,7 @@ function to_snake_case (str) {
         }
         return array.join("")
     }
-    return 0
+    return str
 }
 
 function toCamelCase (str) {
@@ -44,6 +53,7 @@ function toKebabCase (str) {
                 array.splice(v, 1, "-")
             } else if (/[A-Z]/.test(array[v])) {
                 array.splice(v, 0, "-")
+                array[v+1] = array[v+1].toLowerCase()
             }
         }
         return array.join("")
