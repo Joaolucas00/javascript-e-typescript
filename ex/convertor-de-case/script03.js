@@ -61,6 +61,7 @@ function toKebabCase (str) {
             if (array[v] == "_") {
                 array.splice(v, 1, "-")
             } else if (/[A-Z]/.test(array[v])) {
+                array[v] = array[v].toLowerCase()
                 array.splice(v, 0, "-")
             }
         }
@@ -83,4 +84,4 @@ function changeCase(str, type) {
 }
 
 
-console.log(changeCase("olámundo-daa", "camel"))
+console.log(changeCase("olmundo", "kebab"))
