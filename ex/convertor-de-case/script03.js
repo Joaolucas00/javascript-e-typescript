@@ -16,6 +16,9 @@ function isBadString(str) {
 }
 
 function to_snake_case (str) {
+    if (isBadString(str)) {
+        return undefined
+    }
     if (/[A-Z]/.test(str) || str.includes("-")) {
         let array = convertingArrayToString(str)
         for (let v = 0; v < array.length; v++) {
@@ -32,6 +35,9 @@ function to_snake_case (str) {
 }
 
 function toCamelCase (str) {
+    if (isBadString(str)) {
+        return undefined
+    }
     if (str.includes("_") || str.includes("-")) {
         let array = convertingArrayToString(str)
         for (let v = 0; v < array.length; v++) {
@@ -42,10 +48,13 @@ function toCamelCase (str) {
         }
         return array.join("")
     }
-    return 0;
+    return str
 }
 
 function toKebabCase (str) {
+    if (isBadString(str)) {
+        return undefined
+    }
     if (/[A-Z]/.test(str) || str.includes("_")) {
         let array = convertingArrayToString(str)
         for (let v = 0; v < array.length; v++) {
@@ -53,21 +62,25 @@ function toKebabCase (str) {
                 array.splice(v, 1, "-")
             } else if (/[A-Z]/.test(array[v])) {
                 array.splice(v, 0, "-")
-                array[v+1] = array[v+1].toLowerCase()
             }
         }
         return array.join("")
     }
-    return 0
+    return str
 }
 
-function changeCase(str, snake_or_camel = "snake") {
-    if (snake_or_camel == "camel") {
-        return toCamelCase(str)
-    } else if (snake_or_camel == "kebab") {
-        return toKebabCase(str)
+function changeCase(str, type) {
+    switch (type) {
+        case "camel":
+            return toCamelCase(str)
+        case "snake":
+            return to_snake_case(str)
+        case "kebab":
+            return toKebabCase(str)
+        default:
+            return undefined
     }
-    return to_snake_case(str)
 }
 
-console.log(changeCase("oláMundo", "kebab"));
+
+console.log(changeCase("olámundo-daa", "camel"))
