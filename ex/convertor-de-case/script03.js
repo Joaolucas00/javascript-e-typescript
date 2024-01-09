@@ -84,4 +84,4 @@ function changeCase(str, type) {
 }
 
 
-console.log(changeCase("olmundo", "kebab"))
+console.log(changeCase("olá-mundo", "camel"))
