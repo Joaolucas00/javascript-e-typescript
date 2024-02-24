@@ -38,15 +38,16 @@ function toCamelCase (str) {
     if (isBadString(str)) {
         return undefined
     }
-    if (str.includes("_") || str.includes("-")) {
-        let array = convertingArrayToString(str)
-        for (let v = 0; v < array.length; v++) {
-            if (array[v] == "_" || array[v] == "-") {
-                array.splice(v, 1)
-                array[v] = array[v].toUpperCase()
-            }
+    if (str.includes("-")) {
+        for (v = 0; v < 3; v++) {
+            str = str.replace(str[str.indexOf("-") + 1], str[str.indexOf("-") + 1].toUpperCase()).replace("-", "")
         }
-        return array.join("")
+        return str
+    } else if (str.includes("_")) {
+        for (v = 0; v < (str.match((/-/g)||[])).length; v++) {
+            str = str.replace(str[str.indexOf("_") + 1], str[str.indexOf("_") + 1].toUpperCase()).replace("_", "")
+        }
+        return str
     }
     return str
 }
@@ -85,3 +86,14 @@ function changeCase(str, type) {
 
 
 console.log(changeCase("olá-mundo-as-sdaw", "camel"))
+
+
+console.log(("olá-mundo-as-sdaw".match((/-/g)||[])).length);
+
+
+/*
+var nome = "jo-ao-ao-asdwadaw-adw"
+nome = nome.replaceAll(nome[nome.indexOf("-") + 1], nome[nome.indexOf("-") + 1].toUpperCase()).replaceAll(nome[nome.indexOf("-")], "")
+console.log(nome);
+*/
+
