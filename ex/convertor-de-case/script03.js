@@ -84,4 +84,4 @@ function changeCase(str, type) {
 }
 
 
-console.log(changeCase("olá-mundo-as-sdaw", "camel"))
+console.log(changeCase("olá_mundo", "camel"))
