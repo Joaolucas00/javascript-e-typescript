@@ -13,7 +13,7 @@ export class NegociacoesView {
         <table class="table table-hover table-bordered">
             <thead>
                 <tr>
-                    <th>DATA></th>
+                    <th>DATA</th>
                     <th>QUANTIDADE</th>
                     <th>VALOR</th>
                 </tr>
@@ -22,7 +22,7 @@ export class NegociacoesView {
                 ${model.lista().map(negociacao => {
                     return `
                         <tr>
-                            <td>?</td>
+                            <td>${new Intl.DateTimeFormat().format(negociacao.data)}</td>
                             <td>${negociacao.quantidade}</td>
                             <td>${negociacao.valor}</td>
                         </tr>
