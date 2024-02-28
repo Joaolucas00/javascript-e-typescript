@@ -20,7 +20,7 @@ export class NegociacaoController {
         this.negociacoesView.update(this.negociacoes);
     }
 
-    @logarTempoDeExecucao()
+    @logarTempoDeExecucao(true)
     public adicionar(): void {
         const negociacao = Negociacao.criaDe(
             this.inputData.value,
