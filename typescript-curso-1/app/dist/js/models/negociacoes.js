@@ -11,4 +11,7 @@ export class Negociacoes {
     paraTexto() {
         return `Negociações: ${this.negociacoes}`;
     }
+    ehIgual(negociacoes) {
+        return JSON.stringify(this.negociacoes) === JSON.stringify(negociacoes.lista());
+    }
 }
