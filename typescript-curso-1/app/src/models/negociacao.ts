@@ -5,7 +5,6 @@ export class Negociacao {
         public readonly quantidade: number,
         public readonly valor: number
         ) {}
-
     
      public static criaDe(data: string, quantidadeString: string, valorString: string): Negociacao {
         const exp = /-/g;
@@ -13,6 +12,14 @@ export class Negociacao {
         const quantidade = parseInt(quantidadeString);
         const valor = parseFloat(valorString);
         return new Negociacao(date, quantidade, valor);
+    }
+
+    public paraTexto(): void {
+        console.log(`Data: ${this._data}
+                     Quantidade: ${this.quantidade}
+                     Valor: ${this.valor}    
+        `);
+    
     }
 
     get volume(): number {

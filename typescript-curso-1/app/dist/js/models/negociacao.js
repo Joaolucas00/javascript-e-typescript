@@ -11,6 +11,12 @@ export class Negociacao {
         const valor = parseFloat(valorString);
         return new Negociacao(date, quantidade, valor);
     }
+    paraTexto() {
+        console.log(`Data: ${this._data}
+                     Quantidade: ${this.quantidade}
+                     Valor: ${this.valor}    
+        `);
+    }
     get volume() {
         return this.quantidade * this.valor;
     }
