@@ -30,3 +30,4 @@ export class Negociacao {
         return data;
     }
 }
+//# sourceMappingURL=negociacao.js.map
