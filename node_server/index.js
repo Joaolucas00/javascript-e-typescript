@@ -25,7 +25,9 @@ http.createServer((req, res) => {
         'Content-Type': 'application/json',
         'Access-Control-Allow-Origin': 'http://localhost:5555'
     })
-    res.end(JSON.stringify({nome: "João", id: 19}))
+    if(req.url === '/api') {
+        res.end(JSON.stringify({nome: "João", id: 19}))
+    }
 }).listen(8080)
 console.log("Servidor JSON pronto em: http://localhost:8080/");
 
