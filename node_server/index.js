@@ -28,9 +28,7 @@ http.createServer((req, res) => {
     }
 
     routes.acceptUrls.forEach((route) => {
-        if (route.url === req.url) {
-            server.sendHtml(route.html, 200, res)
-        }
+        if (route.url === req.url) server.sendHtml(route.html, 200, res)
     })
     
 }).listen(5555)
