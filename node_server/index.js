@@ -16,8 +16,18 @@ http.createServer((req, res) => {
         res.write(data)
         return res.end()
     })
-
+    
 }).listen(5555)
+console.log("Servidor pronto em: http://localhost:5555/");
+
+http.createServer((req, res) => {
+    res.writeHead(200, {
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': 'http://localhost:5555'
+    })
+    res.end(JSON.stringify({nome: "João", id: 19}))
+}).listen(8080)
+console.log("Servidor JSON pronto em: http://localhost:8080/");
 
 rs.on('open', () => {
     console.log('The file is open')
