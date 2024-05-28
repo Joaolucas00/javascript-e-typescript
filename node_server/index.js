@@ -24,7 +24,7 @@ const routes = {
 http.createServer((req, res) => {
 
     if (!routes.acceptUrls.some((route) => route.url === req.url)) {
-        server.sendHtml('404.html', 404, res)
+        return server.sendHtml('404.html', 404, res)
     }
 
     routes.acceptUrls.forEach((route) => {
